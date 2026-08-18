@@ -1,0 +1,21 @@
+Naga Codex Cyber Security — Attribution & Provenance
+====================================================
+
+This project is original Naga Codex work (MIT). It synthesizes industry
+best practices and is informed by the design patterns of open-source
+agent-skill projects. No third-party skill bodies were copied wholesale.
+
+Influential open projects (study / pattern inspiration only):
+- mukul975/Anthropic-Cybersecurity-Skills (Apache-2.0) — multi-framework mapping, progressive disclosure
+- OWASP/secure-agent-playbook (CC-BY-4.0) — play structure, CWE/OpenCRE-style findings
+- UnitOneAI/SecuritySkills (MIT) — normalized finding envelope ideas, framework grounding
+- olanokhin/agent-security-skill — OWASP LLM 2025 + Agentic 2026 layered check model
+- agentskills.io — open Agent Skills specification
+
+Frameworks referenced (public standards, not proprietary content):
+- MITRE ATT&CK, MITRE ATLAS, MITRE D3FEND
+- NIST CSF 2.0, NIST AI RMF 1.0, NIST SP 800-61
+- OWASP Top 10, OWASP API Top 10, OWASP ASVS, OWASP LLM Top 10 2025, OWASP Agentic Top 10 2026
+- CWE, GDPR, NIS2, ISO/IEC 27001:2022, BSI IT-Grundschutz (mapping guidance)
+
+Naga Codex — nagacodex.cloud

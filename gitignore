@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+.idea/
+.vscode/
+node_modules/
+.env
+.claude/skills/
+.agents/skills/
+.cursor/skills/
+.cursor/rules/naga-codex-cyber.mdc

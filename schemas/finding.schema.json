@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Nagacash/NagaCodex-cyber-security/schemas/finding.schema.json",
+  "title": "Naga Codex Normalized Security Finding",
+  "description": "Machine-readable finding envelope for Naga Codex Cyber Security skills. Client-ready and compliance-mappable.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "engagement",
+    "skill",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "engagement": {
+      "type": "object",
+      "required": [
+        "id",
+        "timestamp",
+        "target"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timestamp": {
+          "type": "string",
+          "minLength": 1
+        },
+        "client": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope_ref": {
+          "type": "string"
+        },
+        "authorization_confirmed": {
+          "type": "boolean"
+        },
+        "tool": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "skill": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "critical": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "high": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "medium": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "low": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "info": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "executive_en": {
+          "type": "string"
+        },
+        "executive_de": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    }
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "severity",
+        "status",
+        "description",
+        "evidence",
+        "remediation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "critical",
+            "high",
+            "medium",
+            "low",
+            "info"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "open",
+            "mitigated",
+            "accepted_risk",
+            "false_positive",
+            "verify"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "cwe": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^CWE-[0-9]+$"
+          }
+        },
+        "owasp": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "framework_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "framework",
+              "id"
+            ],
+            "properties": {
+              "framework": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "location",
+              "summary"
+            ],
+            "properties": {
+              "location": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "snippet": {
+                "type": "string"
+              },
+              "redacted": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "remediation": {
+          "type": "object",
+          "required": [
+            "guidance",
+            "priority"
+          ],
+          "properties": {
+            "guidance": {
+              "type": "string"
+            },
+            "priority": {
+              "type": "string",
+              "enum": [
+                "immediate",
+                "short_term",
+                "planned"
+              ]
+            },
+            "effort": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            },
+            "retest_notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "business_impact": {
+          "type": "string"
+        },
+        "cvss_estimate": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
