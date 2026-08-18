@@ -227,12 +227,13 @@ Built for engagements where the deliverable is a **decision-ready report**, not 
 
 | File | Use |
 |------|-----|
-| [`assets/hero-banner-photo.svg`](assets/hero-banner-photo.svg) · [`.jpg`](assets/hero-banner.jpg) | README hero |
-| [`assets/og-card.svg`](assets/og-card.svg) · [`.jpg`](assets/og-card.jpg) | GitHub social / Open Graph preview |
-| [`assets/skill-map-photo.svg`](assets/skill-map-photo.svg) · [`.jpg`](assets/skill-map.jpg) | Domain map diagram |
-| [`assets/mark.svg`](assets/mark.svg) · [`.jpg`](assets/mark.jpg) | Brand mark |
+| [`assets/hero-banner-photo.svg`](assets/hero-banner-photo.svg) | README hero (rendered) |
+| [`assets/hero-banner.svg`](assets/hero-banner.svg) | Vector hero (lightweight) |
+| [`assets/og-card-photo.svg`](assets/og-card-photo.svg) · [`og-card.svg`](assets/og-card.svg) | Open Graph / social card |
+| [`assets/skill-map-photo.svg`](assets/skill-map-photo.svg) · [`skill-map.svg`](assets/skill-map.svg) | Domain map diagram |
+| [`assets/mark-photo.svg`](assets/mark-photo.svg) · [`mark.svg`](assets/mark.svg) | Brand mark |
 
-**Set the GitHub social preview:** Repository → **Settings** → **General** → **Social preview** → upload `assets/og-card.jpg` (GitHub prefers raster for the social image).
+**GitHub social preview:** Repo → **Settings** → **General** → **Social preview** → upload a PNG/JPG export of `og-card-photo.svg` (GitHub’s social image field wants raster, not SVG).
 
 ---
 
