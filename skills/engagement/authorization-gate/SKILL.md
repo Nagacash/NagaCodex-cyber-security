@@ -14,6 +14,8 @@ metadata:
 
 # Authorization Gate
 
+Required entry point for Naga Codex **defensive consulting** engagements before any live testing.
+
 ## When to use
 - Before **any** active testing, scanning, or exploitation-adjacent analysis
 - Start of every Naga Codex security engagement

@@ -1,9 +1,9 @@
 ---
 name: full-security-audit
 description: >
-  Orchestrate an end-to-end Naga Codex security audit by chaining the right
-  skills for the target (code, API, cloud, AI, compliance) and producing a
-  unified client report. Use when the user asks for a full security audit.
+  Orchestrate an end-to-end Naga Codex **defensive consulting** security audit by
+  chaining the right skills for the target and producing a unified client report.
+  Use for authorized full assessments — not offensive campaigns.
 license: MIT
 metadata:
   author: naga-codex
@@ -12,11 +12,15 @@ metadata:
   frameworks: "NIST-CSF-2.0, OWASP, MITRE-ATT&CK, GDPR, NIS2"
 ---
 
-# Full Security Audit (Orchestrator)
+# Full Security Audit (Defensive Consulting Orchestrator)
+
+## Posture
+**Defensive consulting only.** Authorized scope, client-ready remediation, no exploit weaponization.
 
 ## When to use
-- "full security audit", "security assessment", "pen test lite", "launch review"
-- Naga Codex client engagements needing multi-domain coverage
+- "full security audit", "defensive security assessment", "launch review", "hardening audit"
+- Naga Codex **defensive consulting** engagements needing multi-domain coverage
+- Not for unauthorized or purely offensive red-team operations
 
 ## Workflow
 
