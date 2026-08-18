@@ -53,6 +53,8 @@ Positiv: Die Rechnungssuche nutzt für die ID einen parametrisierten Query (gute
 
 **Beschreibung:** Production-like database password and cloud secret are embedded in application source. Anyone with repository, backup, or image access obtains live credentials suitable for data theft and cloud abuse.
 
+**Evidence (redigiert):** `DATABASE_URL = "postgres://admin:[REDACTED]@db.internal:5432/app"` — Geheimnis vollständig schwärzen (Passwort enthält `@`; keine Teilmasken).
+
 **Geschäftliche Auswirkung:** Full database and cloud account compromise; regulatory exposure if personal data is reachable.
 
 **Maßnahme:** Remove secrets from source; load from a secret manager or runtime env; rotate all exposed credentials immediately; add secret scanning (gitleaks/trufflehog class) to CI and block merges on hits.

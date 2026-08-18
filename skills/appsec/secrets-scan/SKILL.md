@@ -47,7 +47,7 @@ Search for (non-exhaustive):
 | Private key material | Critical/High |
 
 ### 4. Never
-- Print full secrets in reports — redact middle
+- Print full secrets in reports — fully redact (`[REDACTED]`); never partial masks that leave password characters (and watch for `@` inside passwords breaking `user:secret@host` parsing)
 - Commit findings that re-expose the secret
 
 ## Remediation standard

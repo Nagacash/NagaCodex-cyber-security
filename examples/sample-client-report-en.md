@@ -53,6 +53,8 @@ What is already solid: the invoice lookup uses a parameterized query for the id 
 
 **Description:** Production-like database password and cloud secret are embedded in application source. Anyone with repository, backup, or image access obtains live credentials suitable for data theft and cloud abuse.
 
+**Evidence (redacted):** `DATABASE_URL = "postgres://admin:[REDACTED]@db.internal:5432/app"` — full secret redacted (source password contains `@`; do not use partial masks).
+
 **Business impact:** Full database and cloud account compromise; regulatory exposure if personal data is reachable.
 
 **Remediation:** Remove secrets from source; load from a secret manager or runtime env; rotate all exposed credentials immediately; add secret scanning (gitleaks/trufflehog class) to CI and block merges on hits.

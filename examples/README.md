@@ -61,3 +61,8 @@ Gold standard outputs:
 | L5 | client-security-report produces EN + DE with roadmap | matches gold samples |
 
 **Note:** These are prompt-instruction skills, not a CLI. “Execution” means the agent applies the methodology; the gold files show expected structure and evidence quality.
+
+## Reference accuracy
+
+- Client outputs must **fully redact** secrets. For SCR-001 the teaching source uses a password containing `@` (`P@ssw0rd123`), which breaks naive `user:***@host` redaction and makes partial masks unsafe.
+- Gold JSON uses: `postgres://admin:[REDACTED]@db.internal:5432/app` — not a partial password leak.

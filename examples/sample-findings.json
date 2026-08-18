@@ -54,8 +54,14 @@
       "evidence": [
         {
           "location": "examples/vuln-sample/app.py (DATABASE_URL, AWS_SECRET_ACCESS_KEY)",
-          "summary": "Hardcoded postgres URL with password and AWS secret access key constant",
-          "snippet": "DATABASE_URL = \"postgres://admin:***@db.internal:5432/app\"",
+          "summary": "Hardcoded postgres URL with password and AWS secret access key constant. Password contains '@' (userinfo ambiguity in URLs); client outputs must fully redact the secret \u2014 never partial masks like ***@ssw0rd\u2026 which still leak material.",
+          "snippet": "DATABASE_URL = \"postgres://admin:[REDACTED]@db.internal:5432/app\"",
+          "redacted": true
+        },
+        {
+          "location": "examples/vuln-sample/app.py \u2014 AWS_SECRET_ACCESS_KEY",
+          "summary": "Hardcoded AWS secret access key constant (value redacted)",
+          "snippet": "AWS_SECRET_ACCESS_KEY = \"[REDACTED]\"",
           "redacted": true
         }
       ],

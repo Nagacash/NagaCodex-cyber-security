@@ -58,6 +58,7 @@ Group remediations:
 ### 6. Quality bar
 - No invented CVSS if not calculated — label estimates clearly
 - No raw secrets in report
+- Fully redact secrets in snippets (use `[REDACTED]`); never partial masks — especially when passwords contain `@` (URL userinfo ambiguity)
 - Confirmed vs verify separated
 - Naga Codex closing only if this is a commercial sample; internal reports omit marketing close
 

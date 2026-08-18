@@ -28,6 +28,13 @@
 
 **Description:** Production-like database password and cloud secret are embedded in source. Anyone with repo or image access obtains live credentials.
 
+**Evidence (redacted):**
+```text
+DATABASE_URL = "postgres://admin:[REDACTED]@db.internal:5432/app"
+AWS_SECRET_ACCESS_KEY = "[REDACTED]"
+```
+Note: source password contains `@`, so naive `user:***@host` masks are ambiguous and partial masks can leak characters. Fully redact.
+
 **Remediation:** Remove secrets; load from a secret manager or env injected at runtime; rotate all exposed credentials; add secret scanning in CI.
 
 **Priority:** immediate
