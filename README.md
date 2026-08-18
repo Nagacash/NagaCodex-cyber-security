@@ -74,7 +74,16 @@ cd NagaCodex-cyber-security
 
 # Cursor
 ./install.sh cursor
+
+# Hermes (namespaced — required on multi-pack skill roots)
+export SKILLS_DIR=/opt/data/skills
+./install.sh hermes
+./scripts/verify-install.sh "$SKILLS_DIR/naga-codex"
 ```
+
+**Hermes:** never `cp` domain folders into an existing pack (e.g. `cybersecurity/`). Use `./install.sh hermes` so skills land in `naga-codex/<domain>/<skill>/`. See [docs/hermes-install.md](docs/hermes-install.md).
+
+**Prove it works (not just loads):** audit [`examples/vuln-sample/`](examples/vuln-sample/) with `secure-code-review` and compare to [`examples/sample-report-secure-code-review.md`](examples/sample-report-secure-code-review.md).
 
 Or copy any `skills/<domain>/<skill>/` folder into your agent's skills directory.
 

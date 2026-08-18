@@ -19,3 +19,13 @@ Create a Hyperagent skill whose documentation concatenates:
 ## Option C — Marketplace / Learning skill
 Register skill name: `naga-codex-cyber-security`  
 whenToUse: security audits, pentest scoping, OWASP/LLM/MCP reviews, GDPR/NIS2, IR triage, client security reports (EN/DE)
+
+
+## Hermes
+
+```bash
+./install.sh hermes
+./scripts/verify-install.sh "${SKILLS_DIR:-/opt/data/skills}/naga-codex"
+```
+
+End-to-end: `examples/README.md`.
