@@ -8,6 +8,12 @@ Curated · Framework-grounded · EU/DACH-ready · [agentskills.io](https://agent
 [![Standard](https://img.shields.io/badge/agentskills.io-compatible-purple.svg)](https://agentskills.io)
 [![Naga Codex](https://img.shields.io/badge/Naga%20Codex-nagacodex.cloud-black.svg)](https://nagacodex.cloud)
 
+
+<p align="center">
+  <img src="assets/hero-banner.svg" alt="Naga Codex Cyber Security" width="100%" />
+</p>
+
+
 > Give any coding agent the operating system of a Naga Codex security engagement —  
 > not a dump of 800 unchecked prompts.
 
@@ -61,6 +67,11 @@ Or copy any `skills/<domain>/<skill>/` folder into your agent's skills directory
 ---
 
 ## Skill map (25)
+
+<p align="center">
+  <img src="assets/skill-map.svg" alt="25 skills across 7 domains centered on full-security-audit" width="100%" />
+</p>
+
 
 | Domain | Skills | Focus |
 |--------|--------|-------|
@@ -210,6 +221,20 @@ Built for engagements where the deliverable is a **decision-ready report**, not 
 2. Real framework IDs only  
 3. Keep `SKILL.md` lean; deep lists go in `references/`  
 4. Update `docs/catalog.md` when adding skills  
+
+
+## Visual assets
+
+| File | Use |
+|------|-----|
+| [`assets/hero-banner.svg`](assets/hero-banner.svg) · [`.jpg`](assets/hero-banner.jpg) | README hero |
+| [`assets/og-card.svg`](assets/og-card.svg) · [`.jpg`](assets/og-card.jpg) | GitHub social / Open Graph preview |
+| [`assets/skill-map.svg`](assets/skill-map.svg) · [`.jpg`](assets/skill-map.jpg) | Domain map diagram |
+| [`assets/mark.svg`](assets/mark.svg) · [`.jpg`](assets/mark.jpg) | Brand mark |
+
+**Set the GitHub social preview:** Repository → **Settings** → **General** → **Social preview** → upload `assets/og-card.jpg` (GitHub prefers raster for the social image).
+
+---
 
 ## License
 

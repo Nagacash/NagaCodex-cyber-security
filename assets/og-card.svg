@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="Naga Codex Cyber Security">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081018"/>
+      <stop offset="100%" stop-color="#0C1C30"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8FB6D4"/>
+      <stop offset="100%" stop-color="#4F86AB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <!-- shield mark left -->
+  <g transform="translate(140,150)">
+    <path d="M120 20 L230 70 L230 190 C230 270 175 320 120 350 C65 320 10 270 10 190 L10 70 Z" fill="none" stroke="url(#mark)" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M70 120 L120 90 L170 120 L170 200 L120 230 L70 200 Z" fill="none" stroke="url(#mark)" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M95 155 L120 140 L145 155 L145 190 L120 205 L95 190 Z" fill="#6BA3C7" opacity="0.35"/>
+  </g>
+  <text x="520" y="250" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="72" font-weight="700" fill="#F4F7FB">Naga Codex</text>
+  <text x="520" y="320" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="42" font-weight="600" fill="#6BA3C7">Cyber Security</text>
+  <line x1="520" y1="355" x2="1080" y2="355" stroke="#3A5570" stroke-width="1.5"/>
+  <text x="520" y="410" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#A8B8C8">Consulting-grade skills for AI agents</text>
+  <text x="520" y="460" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="18" letter-spacing="3" fill="#7A90A8">APPSEC  ·  AI/MCP  ·  GDPR/NIS2  ·  IR</text>
+  <text x="1120" y="600" text-anchor="end" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#5A7088">nagacodex.cloud</text>
+</svg>

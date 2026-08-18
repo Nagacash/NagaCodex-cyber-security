@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420" role="img" aria-label="Naga Codex Cyber Security">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="55%" stop-color="#0A1220"/>
+      <stop offset="100%" stop-color="#0E2740"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1A2A40" stroke-width="0.6" opacity="0.55"/>
+    </pattern>
+    <linearGradient id="steel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8FB6D4"/>
+      <stop offset="100%" stop-color="#5A8FB3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="420" fill="url(#bg)"/>
+  <rect width="1400" height="420" fill="url(#grid)"/>
+  <!-- faint shield -->
+  <g transform="translate(90,70)" opacity="0.14" fill="none" stroke="#6BA3C7" stroke-width="2">
+    <path d="M90 10 L170 40 L170 120 C170 170 130 200 90 220 C50 200 10 170 10 120 L10 40 Z"/>
+    <path d="M90 40 L140 62 L140 118 C140 150 115 172 90 185 C65 172 40 150 40 118 L40 62 Z"/>
+  </g>
+  <text x="700" y="175" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="6" fill="#F4F7FB">NAGA CODEX</text>
+  <text x="700" y="230" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="10" fill="url(#steel)">CYBER SECURITY</text>
+  <line x1="480" y1="260" x2="920" y2="260" stroke="#3A5570" stroke-width="1"/>
+  <text x="700" y="300" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" letter-spacing="1.5" fill="#8A9BB0">25 consulting-grade agent skills  ·  EU/DACH-ready  ·  agentskills.io</text>
+</svg>

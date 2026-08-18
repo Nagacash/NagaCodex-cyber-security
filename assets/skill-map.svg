@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="25 Skills across 7 Domains">
+  <rect width="1280" height="720" fill="#070B14"/>
+  <text x="640" y="48" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="32" font-weight="700" fill="#F4F7FB">25 Skills · 7 Domains</text>
+<line x1="640" y1="340" x2="640.0" y2="94.0" stroke="#2A4A66" stroke-width="1.5"/>
+<line x1="640" y1="340" x2="230.0" y2="204.0" stroke="#2A4A66" stroke-width="1.5"/>
+<line x1="640" y1="340" x2="1050.0" y2="204.0" stroke="#2A4A66" stroke-width="1.5"/>
+<line x1="640" y1="340" x2="200.0" y2="344.0" stroke="#2A4A66" stroke-width="1.5"/>
+<line x1="640" y1="340" x2="1060.0" y2="344.0" stroke="#2A4A66" stroke-width="1.5"/>
+<line x1="640" y1="340" x2="310.0" y2="494.0" stroke="#2A4A66" stroke-width="1.5"/>
+<line x1="640" y1="340" x2="950.0" y2="494.0" stroke="#2A4A66" stroke-width="1.5"/>
+
+  <polygon points="640,250 740,295 740,385 640,430 540,385 540,295" fill="#0D1828" stroke="#6BA3C7" stroke-width="2.5"/>
+  <path d="M640 300 L675 315 L675 355 C675 375 655 390 640 398 C625 390 605 375 605 355 L605 315 Z" fill="none" stroke="#8FB6D4" stroke-width="2"/>
+  <path d="M628 348 L638 358 L658 332" fill="none" stroke="#8FB6D4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="640" y="420" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#F4F7FB">full-security-audit</text>
+
+  <g>
+    <rect x="520" y="70" width="240" height="48" rx="12" ry="12" fill="#0D1828" stroke="#3D6F94" stroke-width="1.5"/>
+    
+    <text x="640.0" y="99.0" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D7E6F2">engagement · 3</text>
+  </g>
+  <g>
+    <rect x="120" y="180" width="220" height="48" rx="12" ry="12" fill="#0D1828" stroke="#3D6F94" stroke-width="1.5"/>
+    
+    <text x="230.0" y="209.0" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D7E6F2">appsec · 6</text>
+  </g>
+  <g>
+    <rect x="940" y="180" width="220" height="48" rx="12" ry="12" fill="#0D1828" stroke="#3D6F94" stroke-width="1.5"/>
+    
+    <text x="1050.0" y="209.0" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D7E6F2">ai-security · 5</text>
+  </g>
+  <g>
+    <rect x="80" y="320" width="240" height="48" rx="12" ry="12" fill="#0D1828" stroke="#3D6F94" stroke-width="1.5"/>
+    
+    <text x="200.0" y="349.0" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D7E6F2">compliance-eu · 4</text>
+  </g>
+  <g>
+    <rect x="960" y="320" width="200" height="48" rx="12" ry="12" fill="#0D1828" stroke="#3D6F94" stroke-width="1.5"/>
+    
+    <text x="1060.0" y="349.0" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D7E6F2">cloud · 2</text>
+  </g>
+  <g>
+    <rect x="180" y="470" width="260" height="48" rx="12" ry="12" fill="#0D1828" stroke="#3D6F94" stroke-width="1.5"/>
+    
+    <text x="310.0" y="499.0" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D7E6F2">incident-response · 3</text>
+  </g>
+  <g>
+    <rect x="840" y="470" width="220" height="48" rx="12" ry="12" fill="#0D1828" stroke="#3D6F94" stroke-width="1.5"/>
+    
+    <text x="950.0" y="499.0" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D7E6F2">devsecops · 2</text>
+  </g>
+  <text x="640" y="690" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#6A7F96">Naga Codex Cyber Security</text>
+</svg>

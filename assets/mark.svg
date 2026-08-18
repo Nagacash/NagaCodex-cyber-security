@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Naga Codex mark">
+  <rect width="512" height="512" fill="#070B14"/>
+  <g transform="translate(96,64)">
+    <path d="M160 16 L300 72 L300 220 C300 300 230 350 160 380 C90 350 20 300 20 220 L20 72 Z" fill="none" stroke="#6BA3C7" stroke-width="18" stroke-linejoin="round"/>
+    <!-- N strokes -->
+    <path d="M95 130 L95 280" stroke="#6BA3C7" stroke-width="22" stroke-linecap="round"/>
+    <path d="M225 130 L225 280" stroke="#D7E6F2" stroke-width="22" stroke-linecap="round"/>
+    <path d="M95 145 L225 265" stroke="#8FB6D4" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="160" cy="205" r="14" fill="#070B14" stroke="#D7E6F2" stroke-width="6"/>
+  </g>
+</svg>
