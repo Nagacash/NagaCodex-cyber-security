@@ -42,8 +42,14 @@ The installer now **defaults Hermes to namespaced layout** and refuses to treat 
 | 2 Unique | `./scripts/verify-install.sh ...` | no basename dups in tree |
 | 3 Load | `skill_view('secure-code-review')` | loader resolves |
 | 4 Execute | audit `examples/vuln-sample/app.py` | skill **works** |
+| 5 Report | `client-security-report` → EN + DE | orchestrator loop closed |
 
-Level 4 sample report: [`examples/sample-report-secure-code-review.md`](../examples/sample-report-secure-code-review.md).
+Level 4–5 samples:
+
+- [`examples/sample-report-secure-code-review.md`](../examples/sample-report-secure-code-review.md)
+- [`examples/sample-findings.json`](../examples/sample-findings.json)
+- [`examples/sample-client-report-en.md`](../examples/sample-client-report-en.md)
+- [`examples/sample-client-report-de.md`](../examples/sample-client-report-de.md)
 
 ## Residual non-Naga issues
 

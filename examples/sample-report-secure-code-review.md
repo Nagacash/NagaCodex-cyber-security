@@ -14,7 +14,7 @@
 
 | Critical | High | Medium | Low | Info |
 |----------|------|--------|-----|------|
-| 2 | 3 | 1 | 0 | 0 |
+| 3 | 2 | 1 | 0 | 0 |
 
 ## Findings
 
@@ -77,9 +77,7 @@
 
 **Remediation:** Remove endpoint or replace with allowlisted operations; never `shell=True` on user input; require strong admin authn + authz.
 
-**Priority:** immediate  
-
-*(Note: counted in critical column; if consolidating with SCR-003 keep both — different sinks.)*
+**Priority:** immediate
 
 ---
 

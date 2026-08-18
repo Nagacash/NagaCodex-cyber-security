@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0.0",
+  "engagement": {
+    "id": "NC-SAMPLE-001",
+    "timestamp": "2026-08-18T00:00:00Z",
+    "client": "Naga Codex (internal training sample)",
+    "target": "examples/vuln-sample/app.py",
+    "scope_ref": "Static analysis of owned teaching fixture only",
+    "authorization_confirmed": true,
+    "tool": "secure-code-review \u2192 client-security-report"
+  },
+  "skill": {
+    "name": "client-security-report",
+    "version": "1.0.0",
+    "frameworks": [
+      "NIST-CSF-2.0",
+      "OWASP-ASVS-4.0.3",
+      "CWE",
+      "OWASP-API-Top-10-2023"
+    ]
+  },
+  "summary": {
+    "critical": 3,
+    "high": 2,
+    "medium": 1,
+    "low": 0,
+    "info": 0,
+    "executive_en": "Static review of the training sample found a critical insecure posture: hardcoded cloud/database secrets, SQL injection, and an unauthenticated command-execution endpoint. Two high issues enable cross-user invoice access and secret exfiltration via a debug route. The application must not be deployed; remediate critical and high items before any real use.",
+    "executive_de": "Die statische Pr\u00fcfung des Trainings-Samples zeigt eine kritische Sicherheitslage: fest kodierte Cloud-/Datenbank-Geheimnisse, SQL-Injection und ein nicht authentifizierter Befehlausf\u00fchrungs-Endpunkt. Zwei hohe Findings erm\u00f6glichen fremden Rechnungszugriff und Geheimnisabfluss \u00fcber eine Debug-Route. Die Anwendung darf nicht betrieben werden; kritische und hohe Punkte vor jeder realen Nutzung beheben."
+  },
+  "findings": [
+    {
+      "id": "SCR-001",
+      "title": "Hardcoded credentials in source",
+      "severity": "critical",
+      "status": "open",
+      "description": "Production-like database password and cloud secret are embedded in application source. Anyone with repository, backup, or image access obtains live credentials suitable for data theft and cloud abuse.",
+      "cwe": [
+        "CWE-798"
+      ],
+      "owasp": [
+        "A07:2021"
+      ],
+      "framework_refs": [
+        {
+          "framework": "OWASP-ASVS-4.0.3",
+          "id": "V6.4"
+        },
+        {
+          "framework": "CWE",
+          "id": "CWE-798"
+        }
+      ],
+      "evidence": [
+        {
+          "location": "examples/vuln-sample/app.py (DATABASE_URL, AWS_SECRET_ACCESS_KEY)",
+          "summary": "Hardcoded postgres URL with password and AWS secret access key constant",
+          "snippet": "DATABASE_URL = \"postgres://admin:***@db.internal:5432/app\"",
+          "redacted": true
+        }
+      ],
+      "remediation": {
+        "guidance": "Remove secrets from source; load from a secret manager or runtime env; rotate all exposed credentials immediately; add secret scanning (gitleaks/trufflehog class) to CI and block merges on hits.",
+        "priority": "immediate",
+        "effort": "low",
+        "retest_notes": "Confirm secrets absent from tree and git history scan; verify rotation timestamps."
+      },
+      "business_impact": "Full database and cloud account compromise; regulatory exposure if personal data is reachable."
+    },
+    {
+      "id": "SCR-002",
+      "title": "Broken object-level authorization on invoices (BOLA)",
+      "severity": "high",
+      "status": "open",
+      "description": "Invoice records are loaded by invoice_id only. The user_id path parameter is not used for authorization, so any caller who can hit the endpoint may read other users' invoices.",
+      "cwe": [
+        "CWE-639"
+      ],
+      "owasp": [
+        "API1:2023"
+      ],
+      "framework_refs": [
+        {
+          "framework": "OWASP-API-Top-10-2023",
+          "id": "API1"
+        },
+        {
+          "framework": "CWE",
+          "id": "CWE-639"
+        }
+      ],
+      "evidence": [
+        {
+          "location": "examples/vuln-sample/app.py \u2014 get_invoice",
+          "summary": "Query filters only on invoice id; no owner/tenant check against authenticated user",
+          "snippet": "SELECT * FROM invoices WHERE id = ?",
+          "redacted": false
+        }
+      ],
+      "remediation": {
+        "guidance": "Enforce invoice.owner_id == auth.user_id (or tenant scope) before return; deny with 404/403 on mismatch; add automated cross-user access tests.",
+        "priority": "immediate",
+        "effort": "medium",
+        "retest_notes": "Attempt cross-user invoice fetch; expect denial."
+      },
+      "business_impact": "Confidential financial/customer invoice data leakage across accounts."
+    },
+    {
+      "id": "SCR-003",
+      "title": "SQL injection in product search",
+      "severity": "critical",
+      "status": "open",
+      "description": "User-controlled query parameter q is interpolated into SQL via an f-string. An attacker can alter the query to read, modify, or destroy data.",
+      "cwe": [
+        "CWE-89"
+      ],
+      "owasp": [
+        "A03:2021"
+      ],
+      "framework_refs": [
+        {
+          "framework": "OWASP-ASVS-4.0.3",
+          "id": "V5.3.4"
+        },
+        {
+          "framework": "CWE",
+          "id": "CWE-89"
+        }
+      ],
+      "evidence": [
+        {
+          "location": "examples/vuln-sample/app.py \u2014 search",
+          "summary": "f-string builds SQL with unsanitized q",
+          "snippet": "db.execute(f\"SELECT * FROM products WHERE name LIKE '%{q}%'\")",
+          "redacted": false
+        }
+      ],
+      "remediation": {
+        "guidance": "Use parameterized queries only (e.g. LIKE ? with bound value). Prefer an ORM. Add SAST rule for string-built SQL.",
+        "priority": "immediate",
+        "effort": "low",
+        "retest_notes": "Injection payloads in q must not alter query structure."
+      },
+      "business_impact": "Database compromise; potential full application takeover."
+    },
+    {
+      "id": "SCR-004",
+      "title": "OS command injection with missing authentication",
+      "severity": "critical",
+      "status": "open",
+      "description": "The admin_run endpoint executes caller-supplied cmd via shell=True with no authentication or authorization. This is direct remote code execution if the service is reachable.",
+      "cwe": [
+        "CWE-78",
+        "CWE-306"
+      ],
+      "owasp": [
+        "A03:2021",
+        "A01:2021"
+      ],
+      "framework_refs": [
+        {
+          "framework": "CWE",
+          "id": "CWE-78"
+        },
+        {
+          "framework": "CWE",
+          "id": "CWE-306"
+        }
+      ],
+      "evidence": [
+        {
+          "location": "examples/vuln-sample/app.py \u2014 admin_run",
+          "summary": "subprocess.check_output(cmd, shell=True) on request JSON without auth",
+          "snippet": "subprocess.check_output(cmd, shell=True, text=True)",
+          "redacted": false
+        }
+      ],
+      "remediation": {
+        "guidance": "Remove the endpoint or replace with a fixed allowlist of operations; never use shell=True on user input; require strong admin authentication and authorization; place behind network controls.",
+        "priority": "immediate",
+        "effort": "medium",
+        "retest_notes": "Endpoint absent or rejects unauthenticated calls; no shell interpolation."
+      },
+      "business_impact": "Complete host compromise; lateral movement into internal networks."
+    },
+    {
+      "id": "SCR-005",
+      "title": "Debug config endpoint exposes secrets and environment",
+      "severity": "high",
+      "status": "open",
+      "description": "A debug endpoint returns the database URL, AWS key material, and the full process environment to any caller.",
+      "cwe": [
+        "CWE-200"
+      ],
+      "owasp": [
+        "A01:2021"
+      ],
+      "framework_refs": [
+        {
+          "framework": "CWE",
+          "id": "CWE-200"
+        },
+        {
+          "framework": "OWASP-ASVS-4.0.3",
+          "id": "V8.3"
+        }
+      ],
+      "evidence": [
+        {
+          "location": "examples/vuln-sample/app.py \u2014 debug_config",
+          "summary": "JSON response includes database_url, aws_key, and dict(os.environ)",
+          "snippet": "return jsonify({\"database_url\": DATABASE_URL, \"aws_key\": AWS_SECRET_ACCESS_KEY, \"env\": dict(os.environ)})",
+          "redacted": true
+        }
+      ],
+      "remediation": {
+        "guidance": "Delete the endpoint outside local development; never return secrets; gate any diagnostics behind admin auth and explicit non-production checks.",
+        "priority": "immediate",
+        "effort": "low",
+        "retest_notes": "Route returns 404 in staging/prod builds."
+      },
+      "business_impact": "Credential and configuration theft enabling further compromise."
+    },
+    {
+      "id": "SCR-006",
+      "title": "Flask debug server bound to all interfaces",
+      "severity": "medium",
+      "status": "open",
+      "description": "The application entrypoint runs Flask with debug=True and host 0.0.0.0, which is unsafe if exposed beyond localhost (debugger and verbose errors).",
+      "cwe": [
+        "CWE-489"
+      ],
+      "owasp": [
+        "A05:2021"
+      ],
+      "framework_refs": [
+        {
+          "framework": "CWE",
+          "id": "CWE-489"
+        }
+      ],
+      "evidence": [
+        {
+          "location": "examples/vuln-sample/app.py \u2014 __main__",
+          "summary": "app.run(host='0.0.0.0', port=5000, debug=True)",
+          "snippet": "app.run(host=\"0.0.0.0\", port=5000, debug=True)",
+          "redacted": false
+        }
+      ],
+      "remediation": {
+        "guidance": "Use a production WSGI server (gunicorn/uvicorn); debug=False; bind localhost only for local development.",
+        "priority": "short_term",
+        "effort": "low",
+        "retest_notes": "Production process is not Flask dev server; debug disabled."
+      },
+      "business_impact": "Increased attack surface and information leakage if network-exposed."
+    }
+  ]
+}

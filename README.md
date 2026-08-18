@@ -83,7 +83,9 @@ export SKILLS_DIR=/opt/data/skills
 
 **Hermes:** never `cp` domain folders into an existing pack (e.g. `cybersecurity/`). Use `./install.sh hermes` so skills land in `naga-codex/<domain>/<skill>/`. See [docs/hermes-install.md](docs/hermes-install.md).
 
-**Prove it works (not just loads):** audit [`examples/vuln-sample/`](examples/vuln-sample/) with `secure-code-review` and compare to [`examples/sample-report-secure-code-review.md`](examples/sample-report-secure-code-review.md).
+**Prove it works (not just loads):**
+1. Audit [`examples/vuln-sample/`](examples/vuln-sample/) with `secure-code-review` → [`sample-report-secure-code-review.md`](examples/sample-report-secure-code-review.md)
+2. Close the loop with `client-security-report` → [`sample-client-report-en.md`](examples/sample-client-report-en.md) / [`sample-client-report-de.md`](examples/sample-client-report-de.md) + [`sample-findings.json`](examples/sample-findings.json)
 
 Or copy any `skills/<domain>/<skill>/` folder into your agent's skills directory.
 
