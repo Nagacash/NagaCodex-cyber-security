@@ -1,8 +1,10 @@
+**Posture:** Defensive security consulting skills for AI agents — authorized audits, hardening, compliance, IR. Not an offensive pack.
+
 # Why Naga Codex Cyber Security
 
 The market has excellent **libraries** (hundreds of skills) and excellent **narrow packs**
-(code review only, AI-only, offensive-only). Consulting delivery needs something else:
-a **curated operating system** for real engagements.
+(code review only, AI-only, offensive-only). Defensive consulting delivery needs something else:
+a **curated operating system** for authorized Naga Codex engagements.
 
 | Capability | Mega libraries (800+ skills) | Code-only packs | AI-only packs | **Naga Codex** |
 |------------|------------------------------|-----------------|---------------|----------------|
@@ -22,4 +24,4 @@ a **curated operating system** for real engagements.
 3. **Consulting workflow** — gate → assess → report → roadmap
 4. **DACH-ready** — bilingual templates, NIS2/BSI/GDPR spine
 5. **Portable** — agentskills.io standard; Claude, Cursor, Hyperagent, others
-6. **Defensive by default** — authorized testing; no weapon dump
+6. **Defensive consulting only** — authorized audits & hardening; no offensive weapon dump

@@ -1,6 +1,8 @@
 # Hyperagent adapter
 
-Use this pack inside Hyperagent as a **concept skill** (documentation + workflows).
+Use this **defensive consulting** pack inside Hyperagent as a **concept skill** (documentation + workflows).
+
+Posture: authorized audits, hardening, compliance, IR — not offensive tooling.
 
 ## Option A — Point the agent at the repo
 1. Clone or pin this repository in the workspace.

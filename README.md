@@ -1,10 +1,11 @@
 # Naga Codex Cyber Security
 
-**Consulting-grade cybersecurity skills for AI agents.**  
-Curated · Framework-grounded · EU/DACH-ready · [agentskills.io](https://agentskills.io) portable
+**Defensive consulting skills for AI agents.**  
+Authorized audits · Framework-grounded · EU/DACH-ready · [agentskills.io](https://agentskills.io) portable
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/Skills-25-green.svg)](docs/catalog.md)
+[![Posture](https://img.shields.io/badge/Posture-Defensive%20consulting-0B3D5C.svg)](docs/ethics-and-authorization.md)
 [![Standard](https://img.shields.io/badge/agentskills.io-compatible-purple.svg)](https://agentskills.io)
 [![Naga Codex](https://img.shields.io/badge/Naga%20Codex-nagacodex.cloud-black.svg)](https://nagacodex.cloud)
 
@@ -14,8 +15,8 @@ Curated · Framework-grounded · EU/DACH-ready · [agentskills.io](https://agent
 </p>
 
 
-> Give any coding agent the operating system of a Naga Codex security engagement —  
-> not a dump of 800 unchecked prompts.
+> Defensive security consulting for AI agents — AppSec, AI/MCP hardening, EU compliance, IR.  
+> Authorized audits and client deliverables. Not an offensive toolkit or exploit pack.
 
 ---
 
@@ -27,7 +28,7 @@ Open-source agent security packs fall into three traps:
 2. **Code-only packs** — strong AppSec, thin on AI agents, MCP, and EU regulation  
 3. **AI-only packs** — strong LLM checks, no engagement workflow or DACH compliance  
 
-**Naga Codex Cyber Security** is a **curated pack of 25 production skills** built for real audits:
+**Naga Codex Cyber Security** is a **defensive consulting pack of 25 skills** for authorized Naga Codex engagements:
 
 - Authorization gate before any active testing  
 - AppSec + API + secrets + SBOM  
@@ -38,6 +39,21 @@ Open-source agent security packs fall into three traps:
 - One orchestrator skill: `full-security-audit`
 
 See [docs/why-naga-codex.md](docs/why-naga-codex.md) for the competitive comparison.
+
+## Defensive consulting posture
+
+This pack is built for **defensive security consulting**:
+
+| This pack IS | This pack is NOT |
+|--------------|------------------|
+| Authorized security audits & assessments | An offensive / red-team weapon kit |
+| AppSec, cloud, AI/MCP hardening guidance | Exploit PoCs or attack automation |
+| GDPR / NIS2 / ISO / BSI gap consulting | Unscoped pentesting without RoE |
+| IR triage & threat modeling for clients | Bug-bounty spray-and-pray tooling |
+| EN/DE decision-ready client reports | A dump of 800 unchecked prompts |
+
+Every live or recon-style workflow starts with **`authorization-gate`**. Prefer static and read-only analysis first. Findings map to real framework IDs (OWASP, NIST, MITRE, CWE, GDPR…).
+
 
 ---
 
@@ -161,12 +177,13 @@ Skills map to **published** controls only (never invented IDs):
 
 ## Ethics
 
-**Authorized use only.** Read [docs/ethics-and-authorization.md](docs/ethics-and-authorization.md).
+**Defensive consulting · authorized use only.** Read [docs/ethics-and-authorization.md](docs/ethics-and-authorization.md).
 
-- No testing without written scope  
-- No exploit weapon dumps  
+- Written scope / RoE before any active testing  
+- No offensive weaponization or exploit dumps  
 - Redact secrets and PII in all outputs  
 - Prefer static / read-only analysis first  
+- Client-ready remediation, not attack recipes  
 
 ---
 
@@ -211,7 +228,7 @@ Full attribution notes: [NOTICE](NOTICE)
 Security · AI management · Film  
 **[nagacodex.cloud](https://nagacodex.cloud)**
 
-Built for engagements where the deliverable is a **decision-ready report**, not a wall of unchecked model output.
+Built for **defensive consulting engagements** where the deliverable is a **decision-ready report** — not attack tooling and not a wall of unchecked model output.
 
 ---
 

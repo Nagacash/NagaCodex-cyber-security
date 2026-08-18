@@ -1,6 +1,7 @@
 # Example Prompts
 
-## Full engagement
+> Defensive consulting use only. Confirm authorization before any live testing.
+Full engagement
 ```
 Run a full Naga Codex security audit on this repository.
 Confirm authorization for static analysis only (we own this code).

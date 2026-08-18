@@ -1,10 +1,14 @@
 # Ethics, Authorization & Scope Gate
 
-**Naga Codex Cyber Security** skills are for authorized security work only:
-defensive audits, client engagements with written scope, CTF/lab environments,
-and internal hardening. They are not a weapon kit.
+**Naga Codex Cyber Security** is a **defensive consulting** skill pack.
 
-## Mandatory gate (every offensive, recon, or live-test skill)
+It is for authorized defensive security work only: client audits, gap assessments,
+hardening reviews, compliance readiness (GDPR/NIS2/ISO/BSI), IR triage, and
+internal AppSec/AI security reviews — always under written scope.
+
+It is **not** an offensive toolkit, red-team weapon pack, or exploit library.
+
+## Mandatory gate (every recon, dynamic test, or live-assessment skill)
 
 Before any active testing, scanning, or exploitation-adjacent analysis, the agent MUST:
 
@@ -35,3 +39,16 @@ Set `engagement.authorization_confirmed: true` in finding JSON only after the ga
 ## Responsible disclosure
 
 If a vulnerability is found outside a formal engagement, follow coordinated disclosure norms and the client's / vendor's published process. Do not dump details publicly without consent.
+
+
+## Defensive consulting standard
+
+Naga Codex delivers **advice and evidence clients can act on**:
+
+1. Find weaknesses in systems we are authorized to assess  
+2. Explain business impact in plain language (EN/DE as needed)  
+3. Prescribe remediation and retest criteria  
+4. Map to published frameworks — never invent control IDs  
+5. Stop when authorization or scope is unclear  
+
+Offensive techniques appear only as **context for defense** (e.g. how an attacker might abuse a missing control), never as a ready-to-fire attack kit.
